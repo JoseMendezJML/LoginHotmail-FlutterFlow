@@ -1,30 +1,44 @@
-# Pantalla Login
+# Pantalla Login — LoginHotmail
 
 ## Descripción
-Se creó LoginPage en FlutterFlow como pantalla destinada a la autenticación de usuarios mediante cuentas Microsoft, incluyendo Hotmail y Outlook.
 
-Actualmente se utiliza un botón provisional para comprobar la navegación hacia el menú principal.
+Se desarrolló la interfaz de inicio de sesión de LoginHotmail mediante FlutterFlow, utilizando un diseño centrado y una identidad visual azul.
 
-## Diseño
-- Fondo de pantalla: `#F5F7FA`.
-- Sin AppBar.
-- Botón temporal: Probar navegación.
-- Diseño base pendiente de personalizar.
+## Componentes implementados
 
-## Funcionamiento actual
-El botón Probar navegación utiliza el evento `On Tap` con la acción `Navigate To`, estableciendo BienvenidaPage como destino.
+- Ícono de correo electrónico.
+- Título LoginHotmail.
+- Mensaje: Inicia sesión con tu cuenta Microsoft.
+- Botón Iniciar sesión con Microsoft.
+- Botón temporal Probar navegación.
 
-Este botón permite verificar el funcionamiento de las demás pantallas sin implementar todavía la autenticación.
+## Funcionamiento
 
-## Funcionalidad pendiente
-- Registrar y configurar la aplicación en Microsoft.
-- Implementar la autenticación mediante OAuth 2.0 y OpenID Connect.
-- Validar el inicio de sesión.
-- Permitir el acceso al menú principal solamente a usuarios autenticados.
-- Eliminar el botón temporal de prueba.
+### Botón Microsoft
+Se configuró la acción `On Tap → Show Snack Bar`, que muestra el mensaje:
+
+"Inicio de sesión con Microsoft en desarrollo".
+
+Actualmente este botón no realiza autenticación real.
+
+### Botón Probar navegación
+Se configuró la acción `On Tap → Navigate To → BienvenidaPage`, que permite comprobar las demás pantallas de la aplicación.
+
+Este acceso es temporal y deberá eliminarse cuando se implemente la autenticación con Microsoft.
+
+## Pruebas realizadas
+
+| Prueba | Resultado |
+|---|---|
+| Splash navega automáticamente a Login | Correcto |
+| Se muestra la interfaz de Login | Correcto |
+| Botón Microsoft muestra el mensaje informativo | Correcto |
+| Botón temporal abre BienvenidaPage | Correcto |
+| Navegación hacia AcercaDePage | Correcto |
+| Navegación y regreso desde los perfiles | Correcto |
 
 ## Estado
-Navegación temporal configurada. La autenticación real con Hotmail continúa pendiente.
 
-## Evidencia
-Captura: `loginprueba.png`.
+Interfaz y navegación de prueba funcionales.
+
+**Pendiente:** implementar la autenticación real mediante Microsoft OAuth 2.0/OpenID Connect y restringir el acceso a usuarios autenticados.
